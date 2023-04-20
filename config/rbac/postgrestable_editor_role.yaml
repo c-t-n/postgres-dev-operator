@@ -1,0 +1,31 @@
+# permissions for end users to edit postgrestables.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: postgrestable-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: postgres-dev-operator
+    app.kubernetes.io/part-of: postgres-dev-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: postgrestable-editor-role
+rules:
+- apiGroups:
+  - db.c-t-n
+  resources:
+  - postgrestables
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - db.c-t-n
+  resources:
+  - postgrestables/status
+  verbs:
+  - get

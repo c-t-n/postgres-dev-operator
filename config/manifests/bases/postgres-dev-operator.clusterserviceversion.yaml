@@ -1,0 +1,49 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: postgres-dev-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: PostgresDatabase is the Schema for the postgresdatabases API
+      displayName: Postgres Database
+      kind: PostgresDatabase
+      name: postgresdatabases.db.c-t-n
+      version: v1alpha1
+  description: K8s Postgres Operator focused on DEV purposes
+  displayName: postgres-dev-operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - dev
+  - postgres
+  - database
+  links:
+  - name: Postgres Dev Operator
+    url: https://postgres-dev-operator.domain
+  maintainers:
+  - email: francklourme@42.fr
+    name: coton
+  maturity: alpha
+  provider:
+    name: coton
+  version: 0.0.0

@@ -1,0 +1,8 @@
+apiVersion: db.c-t-n/v1alpha1
+kind: PostgresDatabase
+metadata:
+  name: intra-v3
+  namespace: infrastructure
+spec:
+  replicas: 1
+  version: "12-alpine"

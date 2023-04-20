@@ -1,0 +1,13 @@
+apiVersion: db.c-t-n/v1alpha1
+kind: PostgresTable
+metadata:
+  name: students
+  namespace: helloworld
+spec:
+  instance: 
+    name: intra-v3
+    namespace: infrastructure
+
+  name: students
+  user: students
+  password: students
